@@ -22,11 +22,7 @@ type Props = {
 
 
 const DotButton = ({post,user}: Props) => {
-  const  router = useRouter()
-  const redirectHome = () => {
-    // router.push('/');
-    redirect("/");
-  };
+
 
   const {handleFollowUnfollow} = useFollowUnfollow()
 
