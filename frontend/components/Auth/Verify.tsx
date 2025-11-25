@@ -1,6 +1,6 @@
 'use client'
 
-import { MailCheck , Loader2Icon } from 'lucide-react'
+import { MailCheck, Loader2Icon } from 'lucide-react'
 import React, { ChangeEvent, KeyboardEvent, useEffect, useRef, useState } from 'react'
 import LoadingButton from '../Helper/LoadingButton'
 import { BASE_API_URL } from '@/server'
@@ -16,12 +16,10 @@ const Verify = () => {
 
     const dispatch = useDispatch();
     const router = useRouter();
-    const user = useSelector((state:RootState) => state?.auth.user); 
-    //it is used to fetch the logged in user from the redux store   
+    const user = useSelector((state:RootState) => state?.auth.user);  
     const [isPageLoading,setIsPageLoading] = useState(true);
 
-
-    useEffect(()=>{   //if a user doesnt have an account and try to access the page we will stop them
+    useEffect(()=>{  
         if(!user){
             router.replace("/auth/login");
         }
@@ -33,15 +31,10 @@ const Verify = () => {
         }
     },[user,router]);
 
-
     const [isLoading,setIsLoading] = useState(false);
-    const [otp,setOtp] = useState<string[]>(["","","","","",""]) // array of empty otp's initially
-
+    const [otp,setOtp] = useState<string[]>(["","","","","",""]) 
     const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
 
-
-
-    //this handler is responsible for moving to next box automatically when we enter the otp 
     const handleChange = (index: number, event: ChangeEvent<HTMLInputElement>): void => {
         const { value } = event.target;
       
@@ -63,7 +56,6 @@ const Verify = () => {
         if(event.key === "Backspace" && !inputRefs.current[index]?.value && inputRefs.current[index-1]){
             inputRefs.current[index-1]?.focus();
         }
-
     }
 
     const handleSubmit = async()=>{
@@ -79,7 +71,6 @@ const Verify = () => {
         }
     }
 
-
     const handleResendOtp = async()=>{
         const resendOtReq = async()=> await axios.post(`${BASE_API_URL}/users/resend-otp`,null,{
             withCredentials:true,
@@ -89,7 +80,6 @@ const Verify = () => {
 
         if(result){
             toast.success(result.data.message);
-
         }
     }
 
@@ -100,12 +90,6 @@ const Verify = () => {
             </div>
         )
     }
-
-
-
-
-
-
 
   return (
     <div className='h-screen flex items-center flex-col justify-center'>
