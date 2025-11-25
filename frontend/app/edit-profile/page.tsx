@@ -5,7 +5,6 @@ import React, { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { MenuIcon } from 'lucide-react';
 import LeftSidebar from '@/components/Home/LeftSidebar';
-import { AxiosError } from "axios";
 import {
   Sheet,
   SheetContent,
