@@ -1,6 +1,6 @@
 'use client'
 
-import { Loader2Icon, MailCheck } from 'lucide-react'
+import { MailCheck } from 'lucide-react'
 import React, { ChangeEvent, KeyboardEvent, useEffect, useRef, useState } from 'react'
 import LoadingButton from '../Helper/LoadingButton'
 import { BASE_API_URL } from '@/server'
@@ -38,7 +38,7 @@ const Verify = () => {
     const [otp,setOtp] = useState<string[]>(["","","","","",""]) // array of empty otp's initially
 
     const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
-    console.log(otp)
+
 
 
     //this handler is responsible for moving to next box automatically when we enter the otp 
@@ -114,7 +114,7 @@ const Verify = () => {
         />
         <h1 className='text-2xl sm:text-3xl font-bold mb-3'>OTP Verification</h1>
         <p className=' text-sm sm:text-base text-gray-600 font-medium'>We have sent a code to {user?.email}</p>
-        <p className='mb-6 text-sm sm:text-base text-gray-600 font-medium'>Can’t find it? Be sure to check your spam folder 😇😇</p>
+        <p className='mb-6 text-sm sm:text-base text-gray-600 font-medium'>Cannot find it? Be sure to check your spam folder 😇😇</p>
         <div className='flex space-x-4'>
             {[0,1,2,3,4,5].map((index)=>{
                 return (
