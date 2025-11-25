@@ -21,7 +21,7 @@ type Props = {
 
 };  
 
-const Comment = ({ user, post , onClose: _onClose }: Props)
+const Comment = ({ user, post , onClose: _onClose }: Props) => {
   const [comment, setComment] = useState('');
   const dispatch = useDispatch();
 
