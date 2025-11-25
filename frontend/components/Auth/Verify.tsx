@@ -1,6 +1,6 @@
 'use client'
 
-import { Loader, Loader2, Loader2Icon, LoaderPinwheelIcon, MailCheck } from 'lucide-react'
+import { Loader2Icon, MailCheck } from 'lucide-react'
 import React, { ChangeEvent, KeyboardEvent, useEffect, useRef, useState } from 'react'
 import LoadingButton from '../Helper/LoadingButton'
 import { BASE_API_URL } from '@/server'
