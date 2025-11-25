@@ -2,7 +2,7 @@
 
 
 import Image from 'next/image';
-import React, { ChangeEvent, FormEvent, use, useState } from 'react';
+import React, { ChangeEvent, FormEvent, useState } from 'react';
 import PasswordInp from './PasswordInp';
 import LoadingButton from '../Helper/LoadingButton';
 import Link from 'next/link';
